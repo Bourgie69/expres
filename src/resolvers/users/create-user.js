@@ -7,7 +7,7 @@ const usersFilePath = path.resolve('users.json')
 export const createUser = (req, res) => {
     const newUser = req.body
 
-    users.push(newUser)
+    users.push(...newUser)
 
     fs.writeFile(usersFilePath, JSON.stringify(users, null, 2), (err) => {
         if(err){
