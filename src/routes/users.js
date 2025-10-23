@@ -4,12 +4,12 @@ import { createUser } from "../resolvers/users/create-user.js";
 import { updateUser } from "../resolvers/users/update-user.js";
 import { deleteUser } from "../resolvers/users/delete-user.js";
 
-export const router = express.Router();
+export const userRouter = express.Router();
 
-router.get("/", getUser);
+userRouter.get("/", getUser);
 
-router.post("/", createUser);
+userRouter.post("/", createUser);
 
-router.put("/", updateUser);
+userRouter.put("/", updateUser);
 
-router.delete("/:id", deleteUser);
+userRouter.delete("/:id", deleteUser);

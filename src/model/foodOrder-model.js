@@ -1,13 +1,21 @@
 import mongoose from "mongoose";
-const { Schema, model } = mongoose;
 
-const foodOrderSchema = new Schema({
-  user: { type: Schema.Types.ObjectId, required: true, default: "No name" },
-  totalPrice: { type: Number, required: true, default: "No price" },
-//   foodOrderItems: [{ type: , default: null }],
-  status: { type: Boolean, required: true, default: false },
-  createdAt: { type: Date, required: true, default: Date.now() },
-  updatedAt: { type: Date, required: true, default: Date.now() },
+const FoodOrderItem = new Schema({
+  food: { type: Schema.ObjectId, require: true, ref: "food" },
+  quantity: { type: Number, require: true },
 });
 
-export const FoodOrder = model("FoodOrder", foodOrderSchema);
+const FoodOrderSchema = new Schema({
+  name: { type: String, require: true },
+  user: { type: Schema.ObjectId, require: true, ref: "user" },
+  foodOrderItems: [FoodOrderItem],
+  status: {
+    type: String,
+    enum: ["PENDING", "CANCELED", "DELIVERED"],
+  },
+  totalPrice: { type: Number, require: true },
+  updatedAt: { type: Date, default: Date.now },
+  createdAt: { type: Date, default: Date.now },
+});
+
+export default FoodOrderModel = mongoose.model("foodOrder", FoodOrderSchema);

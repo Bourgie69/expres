@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const { Schema, model } = mongoose;
- 
+
 const userSchema = new Schema({
   username: { type: String, required: true, default: "No Name" },
   phoneNumber: { type: String, required: true, default: "No number added" },
@@ -16,5 +16,5 @@ const userSchema = new Schema({
   resetCode: { type: String },
   resetCodeExpires: { type: Date },
 });
- 
-export const User = model("User", userSchema);
+
+export const User = mongoose.model("User", userSchema);
