@@ -1,10 +1,10 @@
-import { users } from "./get-user.js";
-import fs from 'fs'
+import { User } from "../../model/user-model.js";
 
-export const updateUser = (req, res) => {
-  const updatedUser = req.body;
+export const updateUser = async (req, res) => {
+  const id = req.body.id;
+  const updatedUser = await User.findByIdAndUpdate(id, {
+    username: req.body.username,
+  });
 
-  users = users.map((user) => (user.id === updatedUser.id ? updateUser : user));
-
-  res.send("User updated successfully!");
+  res.status(200).json(updatedUser);
 };

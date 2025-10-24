@@ -1,14 +1,8 @@
-import { users } from "./get-user.js";
+import { User } from "../../model/user-model.js";
 
-export const deleteUser = (req, res) => {
-    const id = String(req.params.id);
+export const deleteUser = async (req, res) => {
+    const id = req.body.id
+    const deletedUser = await User.findByIdAndDelete(id)
 
-    const index = users.findIndex(user => user.id === id);
-    if (index === -1) {
-        return res.status(404).send('User not found');
-    }
-
-    users.splice(index, 1); 
-
-    res.send('User deleted successfully!');
+    res.status(200).json(deletedUser)
 };

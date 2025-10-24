@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+const { Schema, model } = mongoose;
+
 
 const FoodOrderItem = new Schema({
   food: { type: Schema.ObjectId, require: true, ref: "food" },
@@ -7,7 +9,7 @@ const FoodOrderItem = new Schema({
 
 const FoodOrderSchema = new Schema({
   name: { type: String, require: true },
-  user: { type: Schema.ObjectId, require: true, ref: "user" },
+  user: { type: Schema.Types.ObjectId, require: true, ref: "User" },
   foodOrderItems: [FoodOrderItem],
   status: {
     type: String,
@@ -18,4 +20,4 @@ const FoodOrderSchema = new Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-export default FoodOrderModel = mongoose.model("foodOrder", FoodOrderSchema);
+export const FoodOrder = mongoose.model("foodOrder", FoodOrderSchema);

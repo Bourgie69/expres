@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { userRouter } from "./src/routes/users.js";
 import { foodRouter } from "./src/routes/food.js";
+import { ordersRouter } from "./src/routes/orders.js";
 
 dotenv.config();
 
@@ -13,7 +14,9 @@ app.use(express.json());
 
 app.use("/users", userRouter);
 
-app.use("/foods", foodRouter)
+app.use("/foods", foodRouter);
+
+app.use("/orders", ordersRouter);
 
 const uri = process.env.MONGO_URI;
 

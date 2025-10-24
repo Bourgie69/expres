@@ -1,8 +1,6 @@
-import fs from 'fs'
-let data = fs.readFileSync('users.json', 'utf8')
+import { User } from "../../model/user-model.js";
 
-export let users = JSON.parse(data)
-
-export const getUser = (req, res) => {
-    res.status(200).json(users)
-}
+export const getUser = async (req, res) => {
+  const users = await User.find();
+  res.status(200).json(users);
+};

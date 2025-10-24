@@ -9,7 +9,7 @@ const userSchema = new Schema({
   password: { type: String, required: true, default: "duus2" },
   address: { type: String, required: true, default: "No address added" },
   avatarImage: { type: String },
-  role: { type: String, required: true, default: "Customer" },
+  role: { type: String, enum: ["ADMIN", "USER"] },
   companyId: [{ type: Schema.Types.ObjectId, ref: "Company", default: [] }],
   createdAt: { type: Date, required: true, default: Date.now },
   updatedAt: { type: Date, required: true, default: Date.now },

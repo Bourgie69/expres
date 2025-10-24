@@ -12,4 +12,4 @@ userRouter.post("/", createUser);
 
 userRouter.put("/", updateUser);
 
-userRouter.delete("/:id", deleteUser);
+userRouter.delete("/", deleteUser);

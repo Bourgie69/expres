@@ -13,4 +13,4 @@ foodRouter.post("/", createFood );
 
 foodRouter.put("/", updateFood);
 
-foodRouter.delete("/:id", deleteFood);
+foodRouter.delete("/", deleteFood);
