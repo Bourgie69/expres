@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { userRouter } from "./src/routes/users.js";
 import { foodRouter } from "./src/routes/food.js";
 import { ordersRouter } from "./src/routes/orders.js";
+import { categoryRouter } from "./src/routes/foodCategory.js";
 
 dotenv.config();
 
@@ -15,6 +16,8 @@ app.use(express.json());
 app.use("/users", userRouter);
 
 app.use("/foods", foodRouter);
+
+app.use("/categories", categoryRouter)
 
 app.use("/orders", ordersRouter);
 
