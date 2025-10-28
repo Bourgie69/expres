@@ -1,13 +1,12 @@
 import express from "express";
-import { getCategory } from "../resolvers/foodCategory/get-category.js";
-import { createCategory } from "../resolvers/foodCategory/create-category.js";
-import { updateCategory } from "../resolvers/foodCategory/update-category.js";
-import { deleteCategory } from "../resolvers/foodCategory/delete-category.js";
-
+import { getCategory } from "../controllers/foodCategory/get-category.js";
+import { createCategory } from "../controllers/foodCategory/create-category.js";
+import { updateCategory } from "../controllers/foodCategory/update-category.js";
+import { deleteCategory } from "../controllers/foodCategory/delete-category.js";
 
 export const categoryRouter = express.Router();
 
-categoryRouter.get("/", getCategory );
+categoryRouter.get("/", getCategory);
 
 categoryRouter.post("/", createCategory);
 

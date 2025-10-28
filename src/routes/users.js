@@ -1,9 +1,10 @@
 import express from "express";
-import { getUser } from "../resolvers/users/get-user.js";
-import { createUser } from "../resolvers/users/create-user.js";
-import { updateUser } from "../resolvers/users/update-user.js";
-import { deleteUser } from "../resolvers/users/delete-user.js";
-import { login } from "../resolvers/users/login.js";
+import { getUser } from "../controllers/users/get-user.js";
+import { createUser } from "../controllers/users/create-user.js";
+import { updateUser } from "../controllers/users/update-user.js";
+import { deleteUser } from "../controllers/users/delete-user.js";
+import { login } from "../controllers/users/login.js";
+
 
 export const userRouter = express.Router();
 

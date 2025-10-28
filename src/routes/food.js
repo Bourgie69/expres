@@ -1,15 +1,16 @@
 import express from "express";
-import { getFood } from "../resolvers/food/get-food.js";
-import { createFood } from "../resolvers/food/create-food.js";
-import { updateFood } from "../resolvers/food/update-food.js";
-import { deleteFood } from "../resolvers/food/delete-food.js";
+import { createFood } from "../controllers/food/create-food.js";
+import { getFood } from "../controllers/food/get-food.js";
+import { updateFood } from "../controllers/food/update-food.js";
+import { deleteFood } from "../controllers/food/delete-food.js";
+
 
 
 export const foodRouter = express.Router();
 
-foodRouter.get("/", getFood );
+foodRouter.get("/", getFood);
 
-foodRouter.post("/", createFood );
+foodRouter.post("/", createFood);
 
 foodRouter.put("/", updateFood);
 
