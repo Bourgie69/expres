@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import cors from "cors"
+import cors from "cors";
 import { userRouter } from "./src/routes/users.js";
 import { foodRouter } from "./src/routes/food.js";
 import { ordersRouter } from "./src/routes/orders.js";
@@ -14,13 +14,13 @@ const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
 
-app.use(cors())
+app.use(cors());
 
 app.use("/users", userRouter);
 
 app.use("/foods", foodRouter);
 
-app.use("/categories", categoryRouter)
+app.use("/categories", categoryRouter);
 
 app.use("/orders", ordersRouter);
 
