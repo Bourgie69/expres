@@ -9,4 +9,4 @@ const FoodCategorySchema = new Schema({
     createdAt: { type: Date, default: Date.now }
 });
 
-export const FoodCategoryModel = mongoose.model('foodCategory', FoodCategorySchema);
+export const FoodCategory = mongoose.model('foodCategory', FoodCategorySchema);
