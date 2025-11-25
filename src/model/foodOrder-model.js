@@ -8,7 +8,7 @@ const FoodOrderItem = new Schema({
 });
 
 const FoodOrderSchema = new Schema({
-  name: { type: String, require: true },
+  name: { type: String},
   user: { type: Schema.Types.ObjectId, require: true, ref: "User" },
   foodOrderItems: [FoodOrderItem],
   status: {
